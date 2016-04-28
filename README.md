@@ -16,7 +16,7 @@ cp docker-monit.conf /etc/init/
 
 
 
-* you need to update conf.d/docker-monit and section /var/run/docker-monit/ with your container names filled in earlier
+* you need to update conf.d/docker-monit and section /var/run/docker-monit/ with your container names filled in with names used above
 
 
 
@@ -30,3 +30,5 @@ docker exec monit_monit_1 monit status
 
 
 http://admin:monit@IP:2812
+
+cat /var/log/upstart/docker-monit.log to make sure if any errors of the 
