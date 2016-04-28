@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# First, create a folder: /var/run/monit
+# Then, make sure your user or group owns it: chown user:user /var/run/monit
+
+# USAGE:
+# use option one to start or stop
+# use option two as the docker name
+# use option three as the docker run command it follows '-d' f you are starting a container
+#
+# Example:
+# $ ./monit_docker_wrapper.sh start my-name "-p 80:80 ubuntu true"
+#
+# I would then expect to find /var/run/monit/my-name-docker-container.pid
+
+case $1 in
+  start)
+    sudo docker start $2
+    ;;
+  stop)
+    sudo docker stop $2
+    sudo rm /var/run/monit/$2-docker-container.pid;
+    ;;
+  *)
+    echo "usage: {start|stop} [name] [docker run command]" ;;
+esac
+exit 0
+
+# This is adapted from the Monit examples. License: MIT.
