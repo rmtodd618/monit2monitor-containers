@@ -1,0 +1,9 @@
+check process docker-monit with pidfile /var/run/docker-monit.pid
+  start program = "/sbin/start docker-monit"
+  stop program = "/sbin/stop docker-monit"
+  if 5 restarts with 5 cycles then timeout
+
+check process ui with path /var/run/docker-monit/ui.pid
+  if 5 restarts with 5 cycles then timeout
+check process guacamole with path /var/run/docker-monit/guacamole.pid
+  if 5 restarts with 5 cycles then timeout
