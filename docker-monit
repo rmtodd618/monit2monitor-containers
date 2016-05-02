@@ -19,6 +19,7 @@ do
     if [ x$pid != '' -a $pid -ne 0 ]
     then
       echo $pid > $name.pid
+      docker start $name
     else
       rm -f $name.pid
     fi

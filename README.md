@@ -13,7 +13,7 @@ Then run from this git repo:
 cp docker-monit /usr/local/bin/
 cp docker-monit.conf /etc/init/
 cp start-container /usr/local/bin
-cp container.conf /etc/init/      Youll want to rename file to name of container and edit it to the name of container also
+cp container.conf /etc/init/      Youll want to rename file to name of container and edit it to the name of container also ex:ui.conf
 
 
 
